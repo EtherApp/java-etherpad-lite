@@ -33,7 +33,7 @@ public class EPLiteClientTest extends TestCase {
      * Rigourous Testing
      */
     public void testEPLiteClient() {
-		this.client = new EPLiteClient("http://localhost:9001", "K8OF91QMQYUvrNu3e9rJ7FnnVgaB3m9q");
+		this.client = new EPLiteClient("http://fastreboot.de:9001", "8EkKqoT0CR28PcRDpF311XLtspAchXuM");
         assertTrue( this.testPadContents() );
         assertTrue( this.testListAllPads() );
     }
@@ -56,6 +56,11 @@ public class EPLiteClientTest extends TestCase {
         client.deletePad("java_test_pad_2");
 
         List padIDs = (List) result.get("padIDs");
-        return padIDs.get(0).equals("java_test_pad_1");
+        for (int i = 0; i < padIDs.size()-1; i++) {
+			if(padIDs.get(i).equals("java_test_pad_1")){
+				return true;
+			}
+		}
+        return false;
     }
 }

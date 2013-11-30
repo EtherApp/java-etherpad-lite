@@ -1,4 +1,10 @@
-target/
-*.ipr
-*.iws
-*.iml
+bin/
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+apikey.txt
+.settings/
